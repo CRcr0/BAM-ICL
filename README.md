@@ -55,6 +55,9 @@ This repository contains the code in jupyter for our demo, which implements a co
 - `n_edit` – Maximum number of tokens Algorithm-1 may substitute.  
 - `eps` – ℓ₂-norm budget applied to the sentence-level perturbation.  
 
+---
 
+## Running Environment
 
+For the environment, we are using Python 3.11, CUDA 12.2, and correlated PyTorch on Linux. Please refer to:  https://pytorch.org/get-started/locally/
  
