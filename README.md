@@ -30,7 +30,16 @@ Quick Start
 	1.	Open the notebook on a GPU machine and run the environment-setup cells.
 	2.	Optional Set TUNE = True in the first block if you want to perform Optuna tuning; otherwise, leave it False.
 	3.	Verify or change n_edit and eps to match your experiment.
-	4.	Execute the remaining blocks sequentially from Algorithm 1 through both Algorithm 2 variants.
+	4.	Execute the remaining blocks sequentially from Algorithm 1 through both Algorithm 2 variants.、
+
+
+Configuration Cheatsheet (text version)
+	•	TUNE – True means “run Optuna search”; False means “skip search”.
+	•	USE_SAVED_PARAMS – True loads best_params.pkl when TUNE=False.
+	•	num_shots – Number of in-context examples in each prompt.
+	•	n_edit – Maximum number of tokens Algorithm-1 is allowed to substitute.
+	•	eps – ℓ₂-norm budget applied to the sentence-level perturbation.
+
 
 
  
