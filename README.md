@@ -1,7 +1,7 @@
 
 # BAM-ICL Attack Demo
 
-This repository contains the Jupyter notebook for our demo, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. The notebook is organized into five top-level code blocks, each with a clear purpose and a small set of flags you can tweak.
+This repository contains the code in jupyter for our demo, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. The notebook is organized into five top-level code blocks, each with a clear purpose and a small set of flags you can tweak.
 
 ---
 
