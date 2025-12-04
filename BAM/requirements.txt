@@ -1,0 +1,12 @@
+# Best-effort dependencies inferred from the notebook.
+# Install according to your environment (GPU / CUDA / bitsandbytes availability etc.).
+torch
+transformers
+datasets
+accelerate
+bitsandbytes
+pandas
+numpy
+scipy
+matplotlib
+optuna
