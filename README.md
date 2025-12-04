@@ -12,6 +12,8 @@
 Conference on Neural Information Processing Systems (NeurIPS), 2025.
 
 ![BAM-ICL Demo](paper/BAM-ICL.png)
+Top: Illustration of ICL and BAM-ICL on LLMs. Bottom: Illustration of the framework design of BAM-ICL.
+BAM-ICL hijacks LLMs and yields unintended output via adversarial ICEs (the block in red) while ICL with benign ICEs (the block in green) produces normal outputs. BAM-ICL is composed of two stages, where in the offline stage (the block in sky blue) we construct the budget profile to search for optimal budget distribution for each ICE and in the online stage (the block in light purple) we sequentially perform budgeted attack to generate adversarial ICEs.
 
 ---
 
