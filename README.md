@@ -11,7 +11,7 @@
 
 Conference on Neural Information Processing Systems (NeurIPS), 2025.
 
-![BAM-ICL Demo](paper/BAM-ICL_Poster.png)
+![BAM-ICL Demo](paper/BAM-ICL.png)
 
 ---
 
