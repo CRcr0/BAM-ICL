@@ -15,7 +15,8 @@ Conference on Neural Information Processing Systems (NeurIPS), 2025.
 
 ---
 
-This repository contains the code of the work, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. Meanwhile, it contains the implementation of the preliminary experiments.
+This repository contains the code of the work, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. 
+Meanwhile, it contains the implementation of the preliminary experiments.
 
 ## Abstract
 
