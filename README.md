@@ -1,8 +1,25 @@
 
-
+# BAM-ICL
 
 ### [Poster](https://neurips.cc/media/PosterPDFs/NeurIPS%202025/116672.png?t=1764864651.985822) | [Slides](https://neurips.cc/virtual/2025/loc/san-diego/poster/116672) | [Paper](https://openreview.net/pdf?id=hCc6obJhlj)
 
+
+
+**BAM-ICL: Causal Hijacking In-Context Learning with Budgeted Adversarial Manipulation**
+[Yuning Han*](https://scholar.google.com/citations?user=QgPTwS8AAAAJ&hl=zh-CN), 
+[Bingyin Zhao*](https://bxz9200.github.io/), 
+[Rui Chu](https://scholar.google.com/citations?user=Jd2YfKQAAAAJ&hl=en), 
+[Feng Luo](https://scholar.google.com/citations?hl=en&user=joROlFwAAAAJ), 
+[Biplab Sikdar](https://scholar.google.com/citations?user=UR6fy_AAAAAJ&hl=en), 
+and [Yingjie Lao†](https://laogroup.ece.tufts.edu/).
+
+Conference on Neural Information Processing Systems (NeurIPS), 2025.
+
+![BAM-ICL Demo](demo/BAM_ICL_demo.png)
+
+---
+
+## BAM-ICL Attack Demo
 
 
 # BAM-ICL Attack Demo
