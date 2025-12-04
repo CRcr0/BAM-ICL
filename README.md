@@ -91,12 +91,12 @@ If you find BAM-ICL useful for your research, please cite our paper:
 
 ```
 @inproceedings{
-chu2025bamicl,
-title={{BAM}-{ICL}: Causal Hijacking In-Context Learning with Budgeted Adversarial Manipulation},
-author={Rui Chu and Bingyin Zhao and Hanling Jiang and Shuchin Aeron and Yingjie Lao},
-booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
-year={2025},
-url={https://openreview.net/forum?id=hCc6obJhlj}
+   chu2025bamicl,
+   title={{BAM}-{ICL}: Causal Hijacking In-Context Learning with Budgeted Adversarial Manipulation},
+   author={Rui Chu and Bingyin Zhao and Hanling Jiang and Shuchin Aeron and Yingjie Lao},
+   booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+   year={2025},
+   url={https://openreview.net/forum?id=hCc6obJhlj}
 }
 ```
 
