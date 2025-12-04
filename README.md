@@ -11,16 +11,18 @@
 
 Conference on Neural Information Processing Systems (NeurIPS), 2025.
 
-![BAM-ICL Demo](BAM-ICL_poster.png)
+![BAM-ICL Demo](paper/BAM-ICL_Poster.png)
 
 ---
 
-## BAM-ICL Attack Demo
-
-
-# BAM-ICL Attack Demo
-
 This repository contains the code in jupyter for our demo, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. The notebook is organized into five top-level code blocks, each with a clear purpose and a small set of flags you can tweak.
+
+## Abstract
+
+Recent research shows that large language models (LLMs) are vulnerable to hijacking attacks under the scenario of in-context learning (ICL) where LLMs demonstrate impressive capabilities in performing tasks by conditioning on a sequence of in-context examples (ICEs) (i.e., prompts with task-specific input-output pairs). Adversaries can manipulate the provided ICEs to steer the model toward attacker-specified outputs, effectively ''hijacking'' the model's decision-making process. Unlike traditional adversarial attacks targeting single inputs, hijacking attacks in LLMs aim to subtly manipulate the initial few examples to influence the model's behavior across a range of subsequent inputs, which requires distributed and stealthy perturbations. However, existing approaches overlook how to effectively allocate the perturbation budget across ICEs. We argue that fixed budgets miss the potential of dynamic reallocation to improve attack success while maintaining high stealthiness and text quality. In this paper, we propose BAM-ICL, a novel budgeted adversarial manipulation hijacking attack framework for in-context learning. We also consider a more practical yet stringent scenario where ICEs arrive sequentially and only the current ICE can be perturbed. BAM-ICL mainly consists of two stages: In the offline stage, where we assume the adversary has access to data drawn from the same distribution as the target task, we develop a global gradient-based attack to learn optimal budget allocations across ICEs. In the online stage, where ICEs arrive sequentially, perturbations are generated progressively according to the learned budget profile. We evaluate BAM-ICL on diverse LLMs and datasets. The experimental results demonstrate that it achieves superior attack success rates and stealthiness, and the adversarial ICEs are highly transferable to other models.
+
+
+
 
 ---
 
@@ -79,4 +81,22 @@ This repository contains the code in jupyter for our demo, which implements a co
 ## Running Environment
 
 For the environment, we are using Python 3.11, CUDA 12.2, and correlated PyTorch on Linux. Please refer to:  https://pytorch.org/get-started/locally/
+
+
+
+## Citation
+
+If you find BAM-ICL useful for your research, please cite our paper:
+
+```
+@inproceedings{
+chu2025bamicl,
+title={{BAM}-{ICL}: Causal Hijacking In-Context Learning with Budgeted Adversarial Manipulation},
+author={Rui Chu and Bingyin Zhao and Hanling Jiang and Shuchin Aeron and Yingjie Lao},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://openreview.net/forum?id=hCc6obJhlj}
+}
+```
+
  
