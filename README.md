@@ -15,7 +15,7 @@ Conference on Neural Information Processing Systems (NeurIPS), 2025.
 
 ---
 
-This repository contains the code in jupyter for our demo, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. The notebook is organized into five top-level code blocks, each with a clear purpose and a small set of flags you can tweak.
+This repository contains the code of the work, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. Meanwhile, it contains the implementation of the preliminary experiments.
 
 ## Abstract
 
