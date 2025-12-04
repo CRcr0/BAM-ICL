@@ -1,4 +1,10 @@
 
+
+
+### [Poster](https://neurips.cc/media/PosterPDFs/NeurIPS%202025/116672.png?t=1764864651.985822) | [Slides]([https://your-slides-link.com](https://neurips.cc/virtual/2025/loc/san-diego/poster/116672)) | [Paper]([https://neurips.cc/virtual/2025/poster/116672](https://openreview.net/pdf?id=hCc6obJhlj))
+
+
+
 # BAM-ICL Attack Demo
 
 This repository contains the code in jupyter for our demo, which implements a complete pipeline for BAM-ICL attacks on the language model of your choice. The notebook is organized into five top-level code blocks, each with a clear purpose and a small set of flags you can tweak.
