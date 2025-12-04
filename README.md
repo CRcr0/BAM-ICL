@@ -71,6 +71,8 @@ pip install -r BAM/requirements.txt
 
 ---
 
+
+<!--
 ## Code Structure
 
 * `BAM/config.py`: Global hyperparameters and shared settings (e.g., `num_shots`, `n_edit`, `eps`, random seeds, model ID, paths).
@@ -89,6 +91,76 @@ pip install -r BAM/requirements.txt
   * `python -m BAM.main alg2-flat` – Run Algorithm-2 Flat Attack (Step 4).
   * `python -m BAM.main alg2-bam` – Run Algorithm-2 BAM-ICL Attack (Step 5).
   * `python -m BAM.main full` – Run the full pipeline: tune → Algorithm-1 → budget profile → Algorithm-2 (flat + BAM-ICL).
+-->
+
+
+
+## Code Structure
+
+* `BAM/config.py`: Global hyperparameters and shared settings (e.g. `NUM_SHOTS`, `N_EDIT`, `EPS`, random seeds, model ID, paths).
+* `BAM/data.py`: Dataset loading and preprocessing utilities (GLUE/SST-2 splits, query sampling for trials).
+* `BAM/model.py`: Model loading and helper functions, including OPT initialization, tokenizers, and sentiment classification utilities.
+* `BAM/alg1_tune.py`: Hyperparameter tuning for Algorithm-1 using Optuna (`STEPS`, `ALPHA`, etc.). Produces `best_params.pkl`.
+* `BAM/alg1_run.py`: Execution of Algorithm-1 with either tuned parameters (from `best_params.pkl`) or built-in defaults. Logs attack metrics and saves per-trial results.
+* `BAM/budget.py`: Budget profile calculation module. Reads Algorithm-1 outputs and computes the per-token epsilon budget profile.
+* `BAM/alg2_flat.py`: Implementation shell for Algorithm-2 (Flat Attack), using the budget profile and (optionally) the tuned Algorithm-1 hyperparameters.
+* `BAM/alg2_bam.py`: Implementation shell for Algorithm-2 (BAM-ICL Attack), using the same budget profile.
+* `BAM/main.py`: Command-line entry point exposing separate commands for each stage (see below).
+* `BAM/__init__.py`: Marks the directory as a Python package.
+
+---
+
+## steps → commands
+
+### 1. Hyperparameter Tuning – Algorithm-1
+
+* **Command:**
+
+  ```bash
+  python -m BAM.main tune-alg1
+  ```
+* **Purpose:** Run an Optuna study to find the best values of `STEPS` and `ALPHA` for the global Algorithm-1 attack.
+* **Output:** `best_params.pkl` (path defined by `BAM/config.BEST_PARAMS_PATH`).
+
+### 2. Execute Algorithm-1
+
+* **Command:**
+
+  ```bash
+  python -m BAM.main run-alg1
+  ```
+* **Purpose:** Run Algorithm-1 using either the tuned parameters (from `best_params.pkl`) or the built-in defaults.
+* **Output:** Printed attack success rate, loss, and other metrics (also saved as `.pkl` files, exactly as in the notebook).
+
+### 3. Budget Profile Calculation
+
+* **Command:**
+
+  ```bash
+  python -m BAM.main budget
+  ```
+* **Purpose:** Allocate the total ε-budget across token positions after Algorithm-1 completes.
+* **Output:** A `budget_profile` describing per-token epsilon usage (normalized), saved to `config.BUDGET_PROFILE_PATH`.
+
+### 4. Algorithm-2 – Flat Attack
+
+* **Command:**
+
+  ```bash
+  python -m BAM.main alg2-flat
+  ```
+* **Purpose:** Run the flat variant of Algorithm-2 using the budget profile and (if present) the tuned `STEPS` and `ALPHA`.
+* **Output:** Attack success rate (ASR), accuracy, and recorded ICEs in a `.pkl` file.
+
+### 5. Algorithm-2 – BAM-ICL Attack
+
+* **Command:**
+
+  ```bash
+  python -m BAM.main alg2-bam
+  ```
+* **Purpose:** Run the budget-aware in-context learning (BAM-ICL) variant of Algorithm-2 with the precomputed budget profile.
+* **Output:** ASR, accuracy, and recorded ICEs in a `.pkl` file.
 
 
 ## Configuration Explaination
