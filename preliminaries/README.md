@@ -16,3 +16,9 @@ You can start by cloning our repository and following the steps below.
     wget https://github.com/dtsip/in-context-learning/releases/download/initial/models.zip
     unzip models.zip
     ```
+
+3. Run Experiments
+
+   ```
+     python preliminaries.py 
+   ```
