@@ -6,11 +6,11 @@
 
 
 **BAM-ICL: Causal Hijacking In-Context Learning with Budgeted Adversarial Manipulation**
-[Yuning Han*](https://scholar.google.com/citations?user=QgPTwS8AAAAJ&hl=zh-CN), 
-[Bingyin Zhao*](https://bxz9200.github.io/), 
+
 [Rui Chu](https://scholar.google.com/citations?user=Jd2YfKQAAAAJ&hl=en), 
-[Feng Luo](https://scholar.google.com/citations?hl=en&user=joROlFwAAAAJ), 
-[Biplab Sikdar](https://scholar.google.com/citations?user=UR6fy_AAAAAJ&hl=en), 
+[Bingyin Zhao*](https://bxz9200.github.io/), , 
+[Hanling Jiang]((https://openreview.net/profile?id=%7EVivian_Jiang3)), 
+[Shuchin Aeron](https://shuchin.github.io), 
 and [Yingjie Lao†](https://laogroup.ece.tufts.edu/).
 
 Conference on Neural Information Processing Systems (NeurIPS), 2025.
