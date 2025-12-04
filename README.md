@@ -29,7 +29,7 @@ Recent research shows that large language models (LLMs) are vulnerable to hijack
 
 ---
 
-## Code Notebook Structure
+## Algorithm-level steps of the code
 
 1. **Hyperparameter Tuning – Algorithm-1**  
    - **Purpose:** Run an Optuna study to find the best values of `steps` and `alpha` for the global Algorithm-1 attack.  
@@ -70,6 +70,26 @@ pip install -r BAM/requirements.txt
 ```
 
 ---
+
+## Code Structure
+
+* `BAM/config.py`: Global hyperparameters and shared settings (e.g., `num_shots`, `n_edit`, `eps`, random seeds, model ID, paths).
+* `BAM/data.py`: Dataset loading and preprocessing utilities (e.g., GLUE/SST-2 splits, query sampling for trials).
+* `BAM/model.py`: Model loading and helper functions, including OPT initialization, tokenizers, and sentiment/topic classification utilities.
+* `BAM/alg1_tune.py`: Hyperparameter tuning for **Algorithm-1** using Optuna (`steps`, `alpha`, etc.). Produces `best_params.pkl`.
+* `BAM/alg1_run.py`: Execution of **Algorithm-1** with either tuned parameters (from `best_params.pkl`) or built-in defaults. Logs attack metrics and saves per-trial results.
+* `BAM/budget.py`: **Budget profile calculation** module. Reads Algorithm-1 outputs and computes the per-token ε budget profile.
+* `BAM/alg2_flat.py`: Implementation of **Algorithm-2 (Flat Attack)**, using the budget profile and (optionally) the tuned Algorithm-1 hyperparameters.
+* `BAM/alg2_bam.py`: Implementation of **Algorithm-2 (BAM-ICL Attack)**, i.e., the budget-aware in-context learning variant, using the same budget profile.
+* `BAM/main.py`: Command-line entry point exposing separate commands for each stage:
+
+  * `python -m BAM.main tune-alg1` – Hyperparameter tuning (Step 1).
+  * `python -m BAM.main run-alg1` – Execute Algorithm-1 (Step 2).
+  * `python -m BAM.main budget` – Budget profile calculation (Step 3).
+  * `python -m BAM.main alg2-flat` – Run Algorithm-2 Flat Attack (Step 4).
+  * `python -m BAM.main alg2-bam` – Run Algorithm-2 BAM-ICL Attack (Step 5).
+  * `python -m BAM.main full` – Run the full pipeline: tune → Algorithm-1 → budget profile → Algorithm-2 (flat + BAM-ICL).
+
 
 ## Configuration Explaination
 
