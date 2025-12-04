@@ -63,15 +63,15 @@ Recent research shows that large language models (LLMs) are vulnerable to hijack
 ---
 
 ## Quick Start
-
-1. Open the notebook on a GPU-enabled machine and run the environment-setup cells.  
-2. **Optional:** In the first block, set `TUNE = True` to perform Optuna tuning; otherwise, leave it `False`.  
-3. Verify or change `n_edit` and `eps` to match your experiment.  
-4. Run the remaining blocks sequentially—from Algorithm-1 through both Algorithm-2 variants.
+```
+conda create -n bam-icl python=3.11 -y
+conda activate bam-icl
+pip install -r BAM/requirements.txt
+```
 
 ---
 
-## Configuration Cheatsheet
+## Configuration Explaination
 
 - `TUNE` – `True` means **run** Optuna search; `False` means **skip** search.  
 - `USE_SAVED_PARAMS` – `True` loads `best_params.pkl` when `TUNE=False`.  
